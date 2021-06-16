@@ -1,7 +1,5 @@
 # diff-action
 
-### Success workflows example
-
 [![Diff Action Test (FILE Passed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_passed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_passed.yml) [![Diff Action Test (FILE Failed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_failed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_failed.yml)
 
 [![Diff Action Test (LINE Passed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_passed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_passed.yml) [![Diff Action Test (LINE Failed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_failed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_failed.yml)
