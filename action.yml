@@ -26,11 +26,11 @@ runs:
   using: "composite"
   steps:
 
-    - run: diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
+    - run: $result = diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
       shell: bash
 
     - id: diff
-      run: echo "::set-output name=diff::$(diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} )"
+      run: echo "::set-output name=diff::$(echo $result)"
       shell: bash
 
     - run: echo "${{ steps.diff.outputs.diff }}"
