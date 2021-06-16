@@ -1,4 +1,4 @@
-name: Diff Action Test File (Passed)
+name: Diff Action Test (LINE Passed)
 
 on:
   workflow_dispatch:

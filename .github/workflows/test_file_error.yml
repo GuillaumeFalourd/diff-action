@@ -1,4 +1,4 @@
-name: Diff Action Test File (Error)
+name: Diff Action Test (FILE Error)
 
 on:
   workflow_dispatch:
