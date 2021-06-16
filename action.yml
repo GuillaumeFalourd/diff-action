@@ -27,14 +27,18 @@ runs:
   steps:
 
     - run: |
-        echo First
-        diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
+        echo First     
+        if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
+          result=$(echo "Passed")
+        else
+          result=$(echo "Failed")
+        fi
       shell: bash
 
     - id: diff
       run: |
         echo Second
-        echo "::set-output name=diff::$(echo diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} )"
+        echo "::set-output name=diff::$(echo $result )"
       shell: bash
 
     - run: |
