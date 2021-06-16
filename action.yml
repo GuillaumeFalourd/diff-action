@@ -1,6 +1,6 @@
-name: 'DIFF Action'
+name: 'DIFF Action 🕵️'
 
-description: 'Github Action to compare files using diff'
+description: 'Github Action to compare 2 files using diff 🕵️'
 
 inputs:
     first_file_path:
@@ -10,7 +10,7 @@ inputs:
         description: 'repo/path/file.txt'
         required: true
     expected_result:
-        description: 'passed or failed'
+        description: 'PASSED or FAILED'
         required: false
         default: 'PASSED'
     specific_line:
