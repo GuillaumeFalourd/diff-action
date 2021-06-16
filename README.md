@@ -4,6 +4,8 @@
 
 [![Diff Action Test (LINE Passed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_passed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_passed.yml) [![Diff Action Test (LINE Failed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_failed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_failed.yml)
 
+![diff-action](https://user-images.githubusercontent.com/22433243/122283163-a4df3180-cec2-11eb-99e1-0561639adf29.png)
+
 Github Action to compare 2 files using [diff](http://www.linuxguide.it/command_line/linux-manpage/do.php?file=diff) 🕵️
 
 ## OS Support
