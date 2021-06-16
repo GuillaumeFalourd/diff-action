@@ -1,11 +1,12 @@
 # diff-action
 
-## Success workflows example
+### Success workflows example
 
 [![Diff Action Test (FILE Passed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_passed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_passed.yml) [![Diff Action Test (FILE Failed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_failed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_failed.yml)
+
 [![Diff Action Test (LINE Passed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_passed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_passed.yml) [![Diff Action Test (LINE Failed)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_failed.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_failed.yml)
 
-## Error workflows example
+### Error workflows example
 
 [![Diff Action Test (FILE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml) [![Diff Action Test (LINE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml)
 
