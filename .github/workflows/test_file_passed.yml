@@ -1,6 +1,7 @@
 name: Diff Action Test (FILE Passed)
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:

@@ -1,6 +1,7 @@
 name: Diff Action Test (LINE Error)
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
