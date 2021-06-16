@@ -26,7 +26,8 @@ runs:
   using: "composite"
   steps:
 
-    - run: |
+    - id: diff
+      run: |
         echo First     
         if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
           result=$(echo "Passed")
@@ -39,7 +40,7 @@ runs:
 
     - run: |
         echo Second
-        echo "${{ steps.diff.outputs.diff }}"
+        echo ${{ steps.diff.outputs.diff }}
       shell: bash
 
 branding:
