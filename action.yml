@@ -33,8 +33,7 @@ runs:
     - id: diff
       run: |
         echo First     
-        if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null
-        then
+        if [ diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} ] >/dev/null; then
           result=$(echo "passed")
         else
           result=$(echo "failed")
@@ -45,8 +44,7 @@ runs:
 
     - run: |
         echo Second     
-        if echo ${{ steps.diff.outputs.diff }} -eq ${{ inputs.expected_result }}
-        then
+        if [ ${{ steps.diff.outputs.diff }} -eq ${{ inputs.expected_result }} ]; then
           echo "Not expected result!" 1>&2
           exit 1
         fi
