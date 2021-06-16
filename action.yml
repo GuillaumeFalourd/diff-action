@@ -12,19 +12,12 @@ inputs:
     expected_result:
         description: 'passed or failed'
         required: false
-        default: 'passed'
+        default: 'PASSED'
 
 outputs:
   diff-output:
     description: "Diff output"
     value: ${{ steps.diff.outputs.diff }}
-
-# runs:
-#     using: 'docker'
-#     image: 'Dockerfile'
-#     args:
-#         - ${{ inputs.first_file_path }}
-#         - ${{ inputs.second_file_path }}
 
 runs:
   using: "composite"
@@ -33,22 +26,22 @@ runs:
     - id: diff
       run: |
         if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
-          result=$(echo "passed")
+          result=$(echo "PASSED")
         else
-          result=$(echo "failed")
+          result=$(echo "FAILED")
         fi
-        echo Diff command result is $result
+        echo - DIFF command result is $result
         echo "::set-output name=diff::$(echo $result)"
       shell: bash
 
     - run: |
-        echo Output value is ${{ steps.diff.outputs.diff }}
-        echo Expected value is ${{ inputs.expected_result }}
+        echo - OUTPUT value is ${{ steps.diff.outputs.diff }}
+        echo - EXPECTED value is ${{ inputs.expected_result }}
         if [ ${{ steps.diff.outputs.diff }} != ${{ inputs.expected_result }} ]; then
-          echo "Output value NOT equal to Expected value!"
+          echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
           exit 1
         else
-          echo "Output value is equal to Expected value!"
+          echo "✅ OUTPUT value EQUAL to EXPECTED value!"
         fi
       shell: bash
 
