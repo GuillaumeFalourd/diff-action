@@ -20,8 +20,8 @@ OS | SUPPORTED
 
 Field | Mandatory | Observation
 ------------ | ------------  | -------------
-**first_file_path** | YES | path/to/file1.txt
-**second_file_path** | YES | path/to/file2.txt
+**first_file_path** | YES | ex: `path/to/file1.txt`
+**second_file_path** | YES | ex: `path/to/file2.txt`
 **expected_result** | NO | `PASSED` (default) or `FAILED`
 **specific_line** | NO | ex: `1` (integer value only)
 
