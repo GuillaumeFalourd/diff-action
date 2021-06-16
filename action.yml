@@ -1,0 +1,23 @@
+name: 'DIFF Action'
+
+description: 'Github Action to compare files using diff'
+
+inputs:
+    first_file_path:
+        description: 'repo/path/file.txt'
+        required: true
+    second_file_path:
+        description: 'repo/path/file.txt'
+        required: true
+
+
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.first_file_path }}
+        - ${{ inputs.second_file_path }}
+
+branding:
+    icon: 'terminal'
+    color: 'blue'
