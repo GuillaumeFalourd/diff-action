@@ -27,11 +27,9 @@ Field | Mandatory | Observation
 **expected_result** | NO | `PASSED` (default) or `FAILED`
 **specific_line** | NO | ex: `1` (integer value only)
 
-#### Workflow
+**Will return FAIL**: If the `diff` output of the 2 files/lines is different than the `expected_result` input value.
 
-**SUCCESS**: If the `diff` output of the 2 files/lines is different than the `expected_result` input value.
-
-**FAIL**: If the `diff` output of the 2 files is equal the `expected_result` input value.
+**Will return SUCCESS**: If the `diff` output of the 2 files/lines is equal the `expected_result` input value.
 
  * * *
 
