@@ -1,4 +1,4 @@
-name: Diff Action Test (Passed)
+name: Diff Action Test File (Failed)
 
 on:
   workflow_dispatch:
@@ -13,8 +13,8 @@ jobs:
       - uses: GuillaumeFalourd/diff-action@main
         with:
           first_file_path: file.txt
-          second_file_path: file_ok.txt
-          expected_result: PASSED
+          second_file_path: file_nok.txt
+          expected_result: FAILED
 
   macos:
     runs-on: macos-latest
@@ -24,8 +24,8 @@ jobs:
       - uses: GuillaumeFalourd/diff-action@main
         with:
           first_file_path: file.txt
-          second_file_path: file_ok.txt
-          expected_result: PASSED
+          second_file_path: file_nok.txt
+          expected_result: FAILED
 
   windows:
     runs-on: windows-latest
@@ -35,5 +35,5 @@ jobs:
       - uses: GuillaumeFalourd/diff-action@main
         with:
           first_file_path: file.txt
-          second_file_path: file_ok.txt
-          expected_result: PASSED
+          second_file_path: file_nok.txt
+          expected_result: FAILED

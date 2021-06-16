@@ -1,0 +1,42 @@
+name: Diff Action Test File (Failed)
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - run: ls
+      - uses: GuillaumeFalourd/diff-action@main
+        with:
+          first_file_path: file.txt
+          second_file_path: file_nok.txt
+          expected_result: FAILED
+          specific_line: 1
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - run: ls
+      - uses: GuillaumeFalourd/diff-action@main
+        with:
+          first_file_path: file.txt
+          second_file_path: file_nok.txt
+          expected_result: FAILED
+          specific_line: 1
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - run: ls
+      - uses: GuillaumeFalourd/diff-action@main
+        with:
+          first_file_path: file.txt
+          second_file_path: file_nok.txt
+          expected_result: FAILED
+          specific_line: 1
