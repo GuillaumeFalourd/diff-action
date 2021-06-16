@@ -30,13 +30,13 @@ runs:
         else
           result=$(echo "FAILED")
         fi
-        echo - DIFF command result is $result
+        echo ↔️ DIFF command result is $result
         echo "::set-output name=diff::$(echo $result)"
       shell: bash
 
     - run: |
-        echo - OUTPUT value is ${{ steps.diff.outputs.diff }}
-        echo - EXPECTED value is ${{ inputs.expected_result }}
+        echo ➡️ OUTPUT value is ${{ steps.diff.outputs.diff }}
+        echo ➡️ EXPECTED value is ${{ inputs.expected_result }}
         if [ ${{ steps.diff.outputs.diff }} != ${{ inputs.expected_result }} ]; then
           echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
           exit 1
