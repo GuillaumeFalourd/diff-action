@@ -9,6 +9,10 @@ inputs:
     second_file_path:
         description: 'repo/path/file.txt'
         required: true
+    expected_result:
+        description: 'passed or failed'
+        required: false
+        default: passed
 
 outputs:
   random-number:
@@ -30,17 +34,19 @@ runs:
       run: |
         echo First     
         if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
-          result=$(echo "Passed")
+          result=$(echo "passed")
         else
-          result=$(echo "Failed")
+          result=$(echo "failed")
         fi
         echo $result
         echo "::set-output name=diff::$(echo $result)"
       shell: bash
 
     - run: |
-        echo Second
-        echo ${{ steps.diff.outputs.diff }}
+        if [ echo ${{ steps.diff.outputs.diff }} != ${{ inputs.expected_result }} ]; then
+          echo "Not expected result!" 1>&2
+          exit 1
+        fi
       shell: bash
 
 branding:
