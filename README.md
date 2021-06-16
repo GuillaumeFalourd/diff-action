@@ -8,7 +8,9 @@
 
 Github Action to compare 2 files using [diff](http://www.linuxguide.it/command_line/linux-manpage/do.php?file=diff) 🕵️
 
-## 🖥 OS Support
+* * *
+
+## 🖥 Supported OS
 
 OS | SUPPORTED
 ---------- | ------------
@@ -25,11 +27,13 @@ Field | Mandatory | Observation
 **expected_result** | NO | `PASSED` (default) or `FAILED`
 **specific_line** | NO | ex: `1` (integer value only)
 
-### Workflow
+#### Workflow
 
 **SUCCESS**: If the `diff` output of the 2 files/lines is different than the `expected_result` input value.
 
 **FAIL**: If the `diff` output of the 2 files is equal the `expected_result` input value.
+
+ * * *
 
 ### 🕵️📋 Comparing 2 files
 
@@ -85,7 +89,7 @@ Field | Mandatory | Observation
           expected_result: FAILED
 ```
 
-### ☑️ Workflow examples returning error
+### ☑️🔴 Workflow examples returning error
 
 [![Diff Action Test (FILE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml) 
 
