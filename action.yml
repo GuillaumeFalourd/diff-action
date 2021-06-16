@@ -13,11 +13,14 @@ inputs:
         description: 'passed or failed'
         required: false
         default: 'PASSED'
+    specific_line:
+        description: 'file line to compare'
+        required: false
 
 outputs:
   diff-output:
     description: "Diff output"
-    value: ${{ steps.diff.outputs.diff }}
+    value: ${{ steps.diff.outputs.result }}
 
 runs:
   using: "composite"
@@ -25,19 +28,29 @@ runs:
 
     - id: diff
       run: |
-        if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
-          result=$(echo "PASSED")
+        if [ -z ${{ inputs.specific_line }} ]; then
+          echo Comparing files
+          if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
+            result=$(echo "PASSED")
+          else
+            result=$(echo "FAILED")
+          fi
         else
-          result=$(echo "FAILED")
+          echo Comparing files specific line
+          if diff <(head -n ${{ inputs.specific_line }} ${{ inputs.first_file_path }}) <(head -n ${{ inputs.specific_line }} ${{ inputs.second_file_path }} )  >/dev/null; then
+            result=$(echo "PASSED")
+          else
+            result=$(echo "FAILED")
+          fi
         fi
         echo ↔️ DIFF command result is $result
-        echo "::set-output name=diff::$(echo $result)"
+        echo "::set-output name=result::$(echo $result)"
       shell: bash
 
     - run: |
-        echo ➡️ OUTPUT value is ${{ steps.diff.outputs.diff }}
+        echo ➡️ OUTPUT value is ${{ steps.diff.outputs.result }}
         echo ➡️ EXPECTED value is ${{ inputs.expected_result }}
-        if [ ${{ steps.diff.outputs.diff }} != ${{ inputs.expected_result }} ]; then
+        if [ ${{ steps.diff.outputs.result }} != ${{ inputs.expected_result }} ]; then
           echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
           exit 1
         else
