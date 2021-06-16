@@ -38,19 +38,19 @@ runs:
         else
           result=$(echo "failed")
         fi
-        echo $result
+        echo Diff result is $result
         echo "::set-output name=diff::$(echo $result)"
       shell: bash
 
     - run: |
         echo Result STEP
-        echo ${{ steps.diff.outputs.diff }}
-        echo ${{ inputs.expected_result }}
+        echo Output value is ${{ steps.diff.outputs.diff }}
+        echo Expected value is ${{ inputs.expected_result }}
         if [ ${{ steps.diff.outputs.diff }} != ${{ inputs.expected_result }} ]; then
-          echo "Not expected result!" 1>&2
+          echo "Output value NOT equal to Expected value!" 1>&2
           exit 1
         else
-          echo "Expected result!"
+          echo "Output value is equal to Expected value!"
         fi
       shell: bash
 
