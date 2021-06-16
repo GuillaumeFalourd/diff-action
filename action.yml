@@ -44,7 +44,7 @@ runs:
 
     - run: |
         echo COMPARE     
-        if [ ${{ steps.diff.outputs.diff }} -eq ${{ inputs.expected_result }} ]; then
+        if [ ${{ steps.diff.outputs.diff }} = ${{ inputs.expected_result }} ]; then
           echo "Not expected result!" 1>&2
           exit 1
         else
