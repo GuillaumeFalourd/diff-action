@@ -44,11 +44,13 @@ runs:
       shell: bash
 
     - run: |
+        echo Second     
         if echo ${{ steps.diff.outputs.diff }} -eq ${{ inputs.expected_result }}
         then
           echo "Not expected result!" 1>&2
           exit 1
         fi
+        echo End
       shell: bash
 
 branding:
