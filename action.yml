@@ -38,7 +38,7 @@ runs:
       shell: bash
 
     - run: |
-        echo Third
+        echo Second
         echo "${{ steps.diff.outputs.diff }}"
       shell: bash
 
