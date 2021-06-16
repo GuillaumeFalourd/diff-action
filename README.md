@@ -91,9 +91,15 @@ Field | Mandatory | Observation
 
 ### ☑️🔴 Workflow examples returning error
 
-[![Diff Action Test (FILE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml) 
+[![Diff Action Test (FILE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml)
 
 [![Diff Action Test (LINE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml)
+
+You can add on the workflow the following line at the job level to ignore the errors (as done on the workflows above)
+
+```yaml
+    continue-on-error: true # Remove if you want the workflow to fail when error
+```
 
 ## Licensed
 
