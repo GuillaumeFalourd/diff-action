@@ -26,7 +26,7 @@ runs:
   using: "composite"
   steps:
 
-    - run: $result = diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
+    - run: result=diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
       shell: bash
 
     - id: diff
