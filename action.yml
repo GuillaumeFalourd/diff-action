@@ -32,7 +32,7 @@ runs:
 
     - id: diff
       run: |
-        echo DIFF     
+        echo Diff STEP    
         if diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} >/dev/null; then
           result=$(echo "passed")
         else
@@ -43,7 +43,7 @@ runs:
       shell: bash
 
     - run: |
-        echo COMPARE     
+        echo Result STEP  
         if [ ${{ steps.diff.outputs.diff }} = ${{ inputs.expected_result }} ]; then
           echo "Not expected result!" 1>&2
           exit 1
