@@ -8,7 +8,7 @@ jobs:
 
   ubuntu:
     runs-on: ubuntu-latest
-    continue-on-error: true # Remove if you want the workflow to fail when error
+    continue-on-error: false # Set TRUE if you want the workflow not to fail when error
     steps:
       - uses: actions/checkout@v2.3.4
       - run: ls
@@ -21,7 +21,7 @@ jobs:
 
   macos:
     runs-on: macos-latest
-    continue-on-error: true # Remove if you want the workflow to fail when error
+    continue-on-error: false # Set TRUE if you want the workflow not to fail when error
     steps:
       - uses: actions/checkout@v2.3.4
       - run: ls
@@ -34,7 +34,7 @@ jobs:
 
   windows:
     runs-on: windows-latest
-    continue-on-error: true # Remove if you want the workflow to fail when error
+    continue-on-error: false # Set TRUE if you want the workflow not to fail when error
     steps:
       - uses: actions/checkout@v2.3.4
       - run: ls
