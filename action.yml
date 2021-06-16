@@ -12,7 +12,7 @@ inputs:
     expected_result:
         description: 'passed or failed'
         required: false
-        default: passed
+        default: 'passed'
 
 outputs:
   diff-output:
@@ -43,8 +43,10 @@ runs:
       shell: bash
 
     - run: |
-        echo Result STEP  
-        if [ ${{ steps.diff.outputs.diff }} = ${{ inputs.expected_result }} ]; then
+        echo Result STEP
+        echo ${{ steps.diff.outputs.diff }}
+        echo ${{ inputs.expected_result }}
+        if [ ${{ steps.diff.outputs.diff }} -eq ${{ inputs.expected_result }} ]; then
           echo "Not expected result!" 1>&2
           exit 1
         else

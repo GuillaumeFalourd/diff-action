@@ -14,7 +14,7 @@ jobs:
         with:
           first_file_path: file.txt
           second_file_path: file_nok.txt
-          expected_result: false
+          expected_result: failed
 
   macos:
     runs-on: macos-latest
@@ -25,7 +25,7 @@ jobs:
         with:
           first_file_path: file.txt
           second_file_path: file_nok.txt
-          expected_result: false
+          expected_result: failed
 
   windows:
     runs-on: windows-latest
@@ -36,4 +36,4 @@ jobs:
         with:
           first_file_path: file.txt
           second_file_path: file_nok.txt
-          expected_result: false
+          expected_result: failed
