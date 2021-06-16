@@ -11,12 +11,20 @@ inputs:
         required: true
 
 
+# runs:
+#     using: 'docker'
+#     image: 'Dockerfile'
+#     args:
+#         - ${{ inputs.first_file_path }}
+#         - ${{ inputs.second_file_path }}
+
 runs:
-    using: 'docker'
-    image: 'Dockerfile'
-    args:
-        - ${{ inputs.first_file_path }}
-        - ${{ inputs.second_file_path }}
+  using: "composite"
+  steps:
+
+    - run: diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
+      shell: bash
+
 
 branding:
     icon: 'terminal'
