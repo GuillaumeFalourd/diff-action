@@ -33,12 +33,8 @@ runs:
         else
           result=$(echo "Failed")
         fi
-      shell: bash
-
-    - id: diff
-      run: |
-        echo Second
-        echo "::set-output name=diff::$(echo $result )"
+        echo $result
+        echo "::set-output name=diff::$(echo $result)"
       shell: bash
 
     - run: |
