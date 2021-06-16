@@ -20,6 +20,8 @@ OS | SUPPORTED
 
 ## 📚 How to use this action?
 
+The [`actions/checkout`](https://github.com/actions/checkout) is mandatory to use this action, as it will need to access the repository files.
+
 Field | Mandatory | Observation
 ------------ | ------------  | -------------
 **first_file_path** | YES | ex: `path/to/file1.txt`
@@ -42,9 +44,9 @@ Field | Mandatory | Observation
       - uses: actions/checkout@v2.3.4
       - uses: GuillaumeFalourd/diff-action@v1
         with:
-          first_file_path: file1.txt
-          second_file_path: file2.txt
-          expected_result: PASSED #PASSED is the default VALUE if not informed
+          first_file_path: path/to/file1.txt
+          second_file_path: path/to/file2.txt
+          expected_result: PASSED
 ```
 
 #### Expecting files to be differents
@@ -54,8 +56,8 @@ Field | Mandatory | Observation
       - uses: actions/checkout@v2.3.4
       - uses: GuillaumeFalourd/diff-action@v1
         with:
-          first_file_path: file1.txt
-          second_file_path: file2.txt
+          first_file_path: path/to/file1.txt
+          second_file_path: path/to/file2.txt
           expected_result: FAILED
 ```
 
@@ -68,10 +70,10 @@ Field | Mandatory | Observation
       - uses: actions/checkout@v2.3.4
       - uses: GuillaumeFalourd/diff-action@v1
         with:
-          first_file_path: file1.txt
-          second_file_path: file2.txt
+          first_file_path: path/to/file1.txt
+          second_file_path: path/to/file2.txt
           specific_line: 3
-          expected_result: PASSED #PASSED is the default VALUE if not informed
+          expected_result: PASSED
 ```
 
 #### Expecting lines to be differents
@@ -81,8 +83,8 @@ Field | Mandatory | Observation
       - uses: actions/checkout@v2.3.4
       - uses: GuillaumeFalourd/diff-action@v1
         with:
-          first_file_path: file1.txt
-          second_file_path: file2.txt
+          first_file_path: path/to/file1.txt
+          second_file_path: path/to/file2.txt
           specific_line: 3
           expected_result: FAILED
 ```
