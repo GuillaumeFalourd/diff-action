@@ -89,9 +89,9 @@ Field | Mandatory | Observation
 
 ### ☑️🔴 Workflow examples returning error
 
-[![Diff Action Test (FILE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml): [workflow test file error](https://github.com/GuillaumeFalourd/diff-action/blob/main/.github/workflows/test_file_error.yml)
+[![Diff Action Test (FILE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_file_error.yml) : [Workflow test file error](https://github.com/GuillaumeFalourd/diff-action/blob/main/.github/workflows/test_file_error.yml)
 
-[![Diff Action Test (LINE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml): [workflow test line error](https://github.com/GuillaumeFalourd/diff-action/blob/main/.github/workflows/test_line_error.yml)
+[![Diff Action Test (LINE Error)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml/badge.svg)](https://github.com/GuillaumeFalourd/diff-action/actions/workflows/test_line_error.yml) : [Workflow test line error](https://github.com/GuillaumeFalourd/diff-action/blob/main/.github/workflows/test_line_error.yml)
 
 ## Licensed
 
