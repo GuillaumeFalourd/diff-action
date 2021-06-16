@@ -28,13 +28,13 @@ runs:
 
     - run: |
         echo First
-        result=diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
+        diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} 
       shell: bash
 
     - id: diff
       run: |
         echo Second
-        echo "::set-output name=diff::$(echo $result)"
+        echo "::set-output name=diff::$(echo diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }} )"
       shell: bash
 
     - run: |
