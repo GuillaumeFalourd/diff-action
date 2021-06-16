@@ -1,4 +1,4 @@
-name: Diff Action Test (ERROR)
+name: Diff Action Test (Error)
 
 on:
   workflow_dispatch:
