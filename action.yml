@@ -52,6 +52,11 @@ runs:
         echo ➡️ EXPECTED value is ${{ inputs.expected_result }}
         if [ ${{ steps.diff.outputs.result }} != ${{ inputs.expected_result }} ]; then
           echo "❌ OUTPUT value NOT EQUAL to EXPECTED value!"
+          if [ -z ${{ inputs.specific_line }} ]; then
+            diff ${{ inputs.first_file_path }} ${{ inputs.second_file_path }}
+          else
+            diff <(head -n ${{ inputs.specific_line }} ${{ inputs.first_file_path }}) <(head -n ${{ inputs.specific_line }} ${{ inputs.second_file_path }} )
+          fi
           exit 1
         else
           echo "✅ OUTPUT value EQUAL to EXPECTED value!"
